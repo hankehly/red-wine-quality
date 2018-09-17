@@ -23,7 +23,7 @@ This is a repository for practicing regression modeling using red-wine quality d
     - Supervised / offline (batch)
 5. How should performance be measured?
     - Root Mean Square Error (RMSE)
-    - _A typical performance measure for regression problems is the Root Mean Square Error (RMSE). It measures the standard deviation4 of the errors the system makes in its predictions. For example, an RMSE equal to 50,000 means that about 68% of the system’s predictions fall within $50,000 of the actual value, and about 95% of the predictions fall within $100,000 of the actual value._
+    - _A typical performance measure for regression problems is the Root Mean Square Error (RMSE). It measures the standard deviation of the errors the system makes in its predictions. For example, an RMSE equal to 50,000 means that about 68% of the system’s predictions fall within $50,000 of the actual value, and about 95% of the predictions fall within $100,000 of the actual value._
 6. Is the performance measure aligned with the business objective?
     - Yes
 7. What would be the minimum performance needed to reach the business objective?

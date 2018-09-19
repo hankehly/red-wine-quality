@@ -44,10 +44,15 @@ This is a repository for practicing regression modeling using red-wine quality d
 
 1. List the data you need and how much you need.
 2. Find and document where you can get that data.
+    - Data found on kaggle (account required): https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009
 3. Check how much space it will take.
+    - 28K
 4. Check legal obligations, and get authorization if necessary.
+    - Data is open sourced
 5. Get access authorizations.
+    - Kaggle account required
 6. Create a workspace (with enough storage space).
+    - https://github.com/hankehly/red-wine-quality
 7. Get the data.
 8. Convert the data to a format you can easily manipulate (without changing the data itself).
 9. Ensure sensitive information is deleted or protected (e.g., anonymized).

@@ -1,6 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
-$my-color: red;
+@font-face {
+    font-family: 'ProximaNova-Regular';
+    src: url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_2_0.eot');
+    src: url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_2_0.eot?#iefix') format('embedded-opentype'), url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_2_0.woff2') format('woff2'), url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_2_0.woff') format('woff'), url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_2_0.ttf') format('truetype');
+}
 
-body {
-    background: $my-color;
+@font-face {
+    font-family: 'ProximaNova-Semibold';
+    src: url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_5_0.eot');
+    src: url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_5_0.eot?#iefix') format('embedded-opentype'), url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_5_0.woff2') format('woff2'), url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_5_0.woff') format('woff'), url('https://storage.googleapis.com/getnative.org/assets/fonts/326C07_5_0.ttf') format('truetype');
+}
+
+$font-family-base: ProximaNova-Regular, "Helvetica Neue", Helvetica, sans-serif;
+$headings-font-family: ProximaNova-Semibold, "Helvetica Neue", Helvetica, sans-serif;
+
+@import "~bootstrap/scss/bootstrap";
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 2dppx) {
+    body {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
 }

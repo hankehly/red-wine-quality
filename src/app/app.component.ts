@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { environment } from "../environments/environment";
 
 import _ from 'lodash';
 
@@ -25,6 +28,13 @@ export class AppComponent implements OnInit {
 
     frame = [];
 
+    get featureFrame() {
+        return _.map(this.frame, _.dropRight);
+    }
+
+    constructor(private http: HttpClient) {
+    }
+
     ngOnInit(): void {
         this.frame.push(this.generateNewRow());
     }
@@ -34,11 +44,30 @@ export class AppComponent implements OnInit {
     }
 
     onClickEstimateQuality(): void {
-        console.log('onClickEstimateQuality')
+        this.http.post(environment.apiOrigin + '/api/estimate', {features: this.featureFrame})
+            .subscribe(this.onHTTPSuccess.bind(this), this.onHTTPError.bind(this));
+    }
+
+    onHTTPSuccess(data) {
+        const { predictions } = data;
+
+        for (let i = 0; i < predictions.length; i++) {
+            this.frame[i][this.frame[i].length - 1] = predictions[i];
+        }
+    }
+
+    onHTTPError(error) {
+        alert(error.message);
+    }
+
+    onUserInput(val: number, row: number, col: number): void {
+        const deepClone = _.cloneDeep(this.frame);
+        deepClone[row][col] = val;
+        this.frame = deepClone;
     }
 
     private generateNewRow(): number[] {
-        return _.times(this.names.length, _.constant(0));
+        return _.fill(Array(this.names.length), 0);
     }
 
 }

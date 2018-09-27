@@ -16,9 +16,10 @@
             <tr *ngFor="let row of frame; index as i">
                 <td *ngFor="let value of row; index as j; last as isLast">
                     <input type="number"
-                           class="form-control form-control-sm"
+                           class="form-control"
                            [min]="0"
                            [value]="value"
+                           (change)="onUserInput(+$event.target.value, +i, +j)"
                            [title]="names[j]"
                            [readonly]="isLast">
                 </td>
